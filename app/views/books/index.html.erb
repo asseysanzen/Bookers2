@@ -1,7 +1,7 @@
 <h1>Books</h1>
 
 <% @books.each do |book| %>
-<%= book.user.name %>
+<%= attachment_image_tag book.user, :profile_image, size: "50x50", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
 <%= link_to book_path(book.id) do %>
 <%= book.title %>
 <% end %>
