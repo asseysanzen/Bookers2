@@ -1,3 +1,6 @@
+<%= flash[:create] %>
+<%= flash[:update] %>
+
 <h1>User info</h1>
 <%= attachment_image_tag @book.user, :profile_image, size: "100x100", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
 <h3><%= @book.user.name %></h3>
