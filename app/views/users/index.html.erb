@@ -1,9 +1,27 @@
 <%= render 'books/sidemenu', book: @book %>
 
 <h1>Users</h1>
-
-<% @users.each do |user| %>
-<%= attachment_image_tag user, :profile_image, size: "50x50", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-<%= user.name %>
-<%= link_to "Show", user_path(user.id) %>
-<% end %>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>Name</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @users.each do |user| %>
+	<tr>
+		<td>
+			<%= attachment_image_tag user, :profile_image, size: "50x50", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+		</td>
+		<td>
+			<%= user.name %>
+		</td>
+		<td>
+			<%= link_to "Show", user_path(user.id) %>
+		</td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>

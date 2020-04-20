@@ -1,12 +1,26 @@
-<h1>User info</h1>
-<%= attachment_image_tag current_user, :profile_image, size: "100x100", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-<h3><%= current_user.name %></h3>
-<h3><%= current_user.introduction %></h3>
-<% if current_user.id == current_user.id %>
-<p><%= link_to "プロフィール編集", edit_user_path(current_user) %></p>
-<% end %>
+<div class="user_info">
+  <div class="user_info_head"><h1>User info</h1></div>
+  <div class="user_info_img">
+    <%= attachment_image_tag current_user, :profile_image, size: "100x100", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+  </div>
+  <div class="user_info_name">
+    <h3><%= current_user.name %></h3>
+  </div>
+  <div class="user_info_intro">
+    <h3><%= current_user.introduction %></h3>
+  </div>
+  <div class="user_info_edit">
+    <% if current_user.id == current_user.id %>
+      <p>
+        <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
-<h1>New Book</h1>
+<div class="newbook">
+  <div class="newbook_head"><h1>New Book</h1></div>
+
 <%= form_for(book, url: books_path) do |f| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
@@ -20,9 +34,20 @@
       </ul>
     </div>
   <% end %>
-  <p>Tilte</p>
-  <%= f.text_field :title %>
-  <p>Opinion</p>
-  <%= f.text_area :body %>
-  <%= f.submit "Create Book" %>
+  <div class="newbook_title">
+    <p>Tilte</p>
+  </div>
+  <div class="newbook_field">
+    <%= f.text_field :title %>
+  </div>
+  <div class="newbook_opinion">
+    <p>Opinion</p>
+  </div>
+  <div class="newbook_area">
+    <%= f.text_area :body %>
+  </div>
+  <div class="newbook_create">
+    <%= f.submit "Create Book" %>
+  </div>
 <% end %>
+</div>
