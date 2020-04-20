@@ -2,5 +2,7 @@
 
 <%= render 'books/sidemenu', {current_user: @user, book: @book} %>
 
+<div class="col-lg-9">
 <h1>Books</h1>
 <%= render 'users/index', books: @books %>
+</div>

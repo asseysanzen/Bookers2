@@ -1,3 +1,4 @@
+<div class="col-lg-3">
 <div class="user_info">
   <div class="user_info_head"><h1>User info</h1></div>
   <div class="user_info_img">
@@ -19,7 +20,7 @@
 </div>
 
 <div class="newbook">
-  <div class="newbook_head"><h1>New Book</h1></div>
+  <div class="newbook_head"><h1>New book</h1></div>
 
 <%= form_for(book, url: books_path) do |f| %>
   <% if book.errors.any? %>
@@ -50,4 +51,5 @@
     <%= f.submit "Create Book" %>
   </div>
 <% end %>
+</div>
 </div>
