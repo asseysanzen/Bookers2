@@ -24,8 +24,11 @@ class UsersController < ApplicationController
   end
   def update
   	@user = User.find(params[:id])
-  	@user.update(user_params)
-  	redirect_to user_path(@user.id), flash:{update: "You have updated book successfully!"}
+  	if @user.update(user_params)
+  	 redirect_to user_path(@user.id), flash:{update: "You have updated book successfully!"}
+    else
+      render :edit
+    end
   end
   private
   def user_params

@@ -1,0 +1,7 @@
+<% books.each do |book| %>
+<%= attachment_image_tag book.user, :profile_image, size: "50x50", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+<%= link_to book_path(book.id) do %>
+<%= book.title %>
+<% end %>
+<%= book.body %>
+<% end %>
