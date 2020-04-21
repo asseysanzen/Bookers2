@@ -10,13 +10,13 @@
   <div class="user_info_intro">
     <h3><%= current_user.introduction %></h3>
   </div>
-  <div class="user_info_edit">
     <% if current_user.id == current_user.id %>
-      <p>
-        <%= link_to "プロフィール編集", edit_user_path(current_user) %>
-      </p>
+      <div class="btn btn-default">
+        <%= link_to edit_user_path(current_user) do %>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        <% end %>
+      </div>
     <% end %>
-  </div>
 </div>
 
 <div class="newbook">
@@ -53,5 +53,3 @@
 <% end %>
 </div>
 </div>
-
-<!-- class: "img-circle pull-left profile-img", -->
