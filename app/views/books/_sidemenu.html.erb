@@ -2,7 +2,7 @@
 <div class="user_info">
   <div class="user_info_head"><h1>User info</h1></div>
   <div class="user_info_img">
-    <%= attachment_image_tag current_user, :profile_image, size: "100x100", format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+    <%= attachment_image_tag current_user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %>
   </div>
   <div class="user_info_name">
     <h3><%= current_user.name %></h3>
@@ -53,3 +53,5 @@
 <% end %>
 </div>
 </div>
+
+<!-- class: "img-circle pull-left profile-img", -->

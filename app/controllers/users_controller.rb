@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
 
   def show
   	@user = User.find(params[:id])
@@ -29,6 +30,11 @@ class UsersController < ApplicationController
   	 redirect_to user_path(@user.id), flash:{update: "You have updated user successfully."}
     else
       render :edit
+    end
+  end
+  def correct_user
+      if current_user.id !=  params[:id].to_i
+    redirect_to user_path(current_user)
     end
   end
   private
